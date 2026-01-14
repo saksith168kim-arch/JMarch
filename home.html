@@ -1,0 +1,568 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        /* width */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 5px;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+    
+
+<title>
+    សិរីមង្គលអាពាហ៍ពិពាហ៍
+</title>
+
+    <meta property="og:url" content="https://theapka.com/events/wedding-20260112060935-4170/preview_templates/2" />
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:title" content="សិរីមង្គលអាពាហ៍ពិពាហ៍" />
+    <meta property="og:description" content="លី មិនហូ & ងង់ ស្រីមាច" />
+    <meta property="og:image" content="https://i.postimg.cc/BnZQ8L6x/IMG-2405.jpg" />
+    <meta name="twitter:image" content="https://i.postimg.cc/BnZQ8L6x/IMG-2405.jpg" />
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Dangrek&family=Roboto&family=Pacifico&family=Montserrat&family=Ovo&family=Kantumruy+Pro&family=Great+Vibes&family=Dancing+Script&family=Moul&family=Battambang&family=Fasthand&family=Moulpali&family=Wix+Madefor+Display:wght@400;500;600;700&display=swap" />
+
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/locale/km.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/date-fns@3.6.0/cdn.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/date-fns@3.6.0/locale/km/cdn.min.js"></script>
+
+
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.1/dist/cdn.min.js" defer></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/add-to-calendar-button@2" async defer></script>
+    <link rel="stylesheet" href="https://theapka.com/storage/templates/chhay/style.css?v2.8" />
+    <script>
+        dayjs.locale('km')
+
+        function convertToKhmerNumerals(number) {
+            const khmerNumerals = ['០', '១', '២', '៣', '៤', '៥', '៦', '៧', '៨', '៩'];
+            return number.toString().split('').map(digit => khmerNumerals[digit]).join('');
+        }
+        function replaceNumbersWithKhmer(text) {
+            return text.split('').map(char => {
+                const digit = parseInt(char, 10);
+                return isNaN(digit) ? char : convertToKhmerNumerals(digit);
+            }).join('');
+        }
+    </script>
+
+    <script>
+        document.addEventListener('alpine:init', () => {
+            Alpine.store('lang', {
+                current: localStorage.getItem('language') || 'km',
+                translations: {
+                    "km": {
+                        "wedding_ceremony": "សិរីមង្គលអាពាហ៍ពិពាហ៍",
+                        "invitation": "សូមគោរពអញ្ជើញ",
+                        "honored_invitation": "យើងខ្ញុំមានកិត្តិយសសូមគោរពអញ្ជើញ",
+                        "guests": "ឯកឧត្តម លោកឧកញ៉ា លោកជំទាវ លោក លោកស្រី អ្នកនាងកញ្ញា  អញ្ជើញចូលរួមជាអធិបតី និងជាភ្ញៀវកិត្តិយស ដើម្បីប្រសិទ្ធិពរជ័យសិរីសួស្តី ជ័យមង្គល ក្នុងពិធីអាពាហ៍ពិពាហ៍ របស់យើងខ្ញុំទាំងពីរ។",
+                        "invitation_text": "អញ្ជើញចូលរួមជាអធិបតី និងជាភ្ញៀវកិត្តិយស ដើម្បីប្រសិទ្ធិពរជ័យ សិរីសួស្តី ជ័យមង្គល ក្នុងពិធីអាពាហ៍ពិពាហ៍ របស់យើងខ្ញុំទាំងពីរ។",
+                        "schedule": "កម្មវិធីមង្គលអាពាហ៍ពិពាហ៍",
+                        "location": "ទីតាំងកម្មវិធីមង្គល",
+                        "thank_you_message": "វត្តមានឯកឧត្តម លោកឧកញ៉ា លោកជំទាវ លោក លោកស្រី អ្នកនាងកញ្ញា ជាកិត្តិយសដ៏ឧត្តុង្គឧត្តម ចំពោះគ្រួសាររបស់យើងខ្ញុំ។",
+                        "switch_to_english": "English"
+                    },
+                    "en": {
+                        "wedding_ceremony": "Celebration of Marriage",
+                        "invitation": "Request the honor of your presence",
+                        "honored_invitation": "we are honor to invited",
+                        "guests": "Your Excellency, Oknha, Distinguished Ladies and Gentlemen, we are deeply honored to invite you as our presiding guests to bestow your blessings and share in the joyous celebration of our marriage ceremony.",
+                        "invitation_text": "To share in the joy and celebration as we unite in marriage. Your presence and blessings will make our special day complete.",
+                        "schedule": "Order of Ceremonies",
+                        "location": "Reception Venue",
+                        "thank_you_message": "Your esteemed presence would be our greatest honor and bring immense joy to both our families.",
+                        "switch_to_khmer": "ភាសាខ្មែរ"
+                    }
+                },
+                get text() {
+                    return this.translations[this.current]
+                },
+                toggle() {
+
+                    this.current = this.current === 'km' ? 'en' : 'km'
+                    localStorage.setItem('language', this.current)
+                }
+            })
+        })
+
+        function dateFormatter(eventDate = null, showTime = false) { 
+            return {
+                formattedDate: '',
+                eventDate: eventDate ?? "2026-01-12 13:10:00",
+                showTime: showTime,
+                init() {
+                    dayjs.locale('km');
+                    const dayjsDate = dayjs(this.eventDate);
+
+                    // Format date
+                    let formattedDate = dayjsDate.format('ថ្ងៃdddd ទី DD ខែ MMMM ឆ្នាំ YYYY');
+
+                    // Convert to Khmer numerals
+                    const dayInKhmer = convertToKhmerNumerals(dayjsDate.date());
+                    const yearInKhmer = convertToKhmerNumerals(dayjsDate.year());
+
+                    formattedDate = formattedDate
+                        .replace(dayjsDate.date(), dayInKhmer)
+                        .replace(dayjsDate.year(), yearInKhmer);
+
+                    // Optional time display
+                    if (this.showTime) {
+                        const dateObj = new Date(this.eventDate);
+                        const timeInKhmer = dateFns.format(dateObj, 'ម៉ោង h:mm b', {
+                            locale: dateFns.locale.km
+                        });
+                        const timeInKhmerNumerals = replaceNumbersWithKhmer(timeInKhmer);
+                        this.formattedDate = `${formattedDate} ${timeInKhmerNumerals}`;
+                    } else {
+                        this.formattedDate = formattedDate;
+                    }
+                }
+            }
+        }
+
+        function timeFormatter(time) {
+            return {
+                time: time,
+                formattedTime: '',
+                init() {
+                    this.formattedTime = this.formatStringToTime(this.time);
+                },
+                formatStringToTime(timeString) {
+                    const [hour, minute, second] = timeString.split(':').map(Number);
+
+                    const tempDate = new Date();
+                    const updatedDate = dateFns.setSeconds(
+                        dateFns.setMinutes(dateFns.setHours(tempDate, hour), minute),
+                        second
+                    );
+
+                    const formattedTime = dateFns.format(updatedDate, 'ម៉ោង h:mm b', {
+                        locale: dateFns.locale.km
+                    });
+
+                    // Convert formatted time to Khmer numerals
+                    return formattedTime.split('').map(char => {
+                        return char.match(/\d/) ? convertToKhmerNumerals(char) : char;
+                    }).join('');
+                }
+            }
+        }
+    </script>
+</head>
+<style>
+  body {
+    margin: 0; /* remove default margin */
+    min-height: 100vh; /* full viewport height */
+    background-image: url('https://i.postimg.cc/CMcKS2RQ/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* optional: stays fixed on scroll */
+  }
+</style>
+<body>
+    
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+    <script>
+        var duration = 15 * 10000;
+        var animationEnd = Date.now() + duration;
+        var skew = 1;
+
+        const scalar = 10;
+        const pineapple = confetti.shapeFromText({
+            text: "💛",
+            scalar
+        });
+        var heart = confetti.shapeFromPath({
+            path: "M167 72c19,-38 37,-56 75,-56 42,0 76,33 76,75 0,76 -76,151 -151,227 -76,-76 -151,-151 -151,-227 0,-42 33,-75 75,-75 38,0 57,18 76,56z",
+            matrix: [
+                0.03333333333333333, 0, 0, 0.03333333333333333, -5.566666666666666,
+                -5.533333333333333,
+            ],
+        });
+
+        function randomInRange(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+
+        (function frame() {
+            var timeLeft = animationEnd - Date.now();
+            var ticks = Math.max(50, 80 * (timeLeft / duration));
+            skew = Math.max(0.8, skew - 0.001);
+
+            confetti({
+                particleCount: 1,
+                startVelocity: 0,
+                ticks: ticks,
+                origin: {
+                    x: Math.random(),
+                    // since particles fall down, skew start toward the top
+                    y: Math.random() * skew - 0.2,
+                },
+                shapes: [heart],
+                gravity: randomInRange(0.4, 0.6),
+                scalar: randomInRange(0.5, 2),
+                drift: randomInRange(-0.4, 0.4),
+                colors: ["#FFC8A3", "#FFDAB9", "#D4AF37"],
+            });
+
+            if (timeLeft > 0) {
+                requestAnimationFrame(frame);
+            }
+        })();
+    </script>
+
+    <div id="theapka-template">
+
+        <!-- Language Switcher -->
+        <div class="fixed z-50 top-4 right-4 font-kantumruy" x-data>
+            <button @click="$store.lang.toggle()"
+                class="flex items-center gap-2 px-3 py-2 text-white transition-all rounded-full bg-black/30 hover:bg-black/40">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path
+                        d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                    </path>
+                </svg>
+                <span class="text-sm font-medium"
+                    x-text="$store.lang.current === 'km' ? $store.lang.text.switch_to_english : $store.lang.text.switch_to_khmer"></span>
+            </button>
+        </div>
+        <div class="flex flex-wrap max-w-xl mx-auto">
+            <div id="theapka-cover" class="w-full h-[650px] relative bg-center bg-cover bg-no-repeat"
+                style="background-image: url('https://i.postimg.cc/BnZQ8L6x/IMG-2405.jpg');">
+                <div class="w-full h-full opacity-50 bg-gradient-to-b from-gray-500 to-transparent"></div>
+                <div class="absolute top-0 left-0 flex flex-col w-full h-full pt-12 text-2xl text-center text-white "
+                    x-data>
+                    <div class="drop-shadow-xl font-wedding-ceremony [text-shadow:_0_1px_0_rgb(0_0_0_/_70%)]"
+                        :class="{ 'text-4xl': $store.lang.current !== 'km' }"
+                        x-text="$store.lang.text.wedding_ceremony"></div>
+                    <div class="mt-[150px] text-3xl text-white font-dangrek [text-shadow:_0_1px_0_rgb(0_0_0_/_70%)]">
+                        <div>លី មិនហូ</div>
+                        <img src="https://theapka.com/storage/templates/chhay/images/2hearts.gif" alt=""
+                            class="h-12 mx-auto" />
+                        <div class="flex flex-row items-end justify-center mx-auto">
+                            <span>ងង់ ស្រីមាច</span>
+                        </div>
+                    </div>
+
+                    <div class="w-full max-w-xs mx-auto mt-12 text-base [text-shadow:_0_1px_0_rgb(0_0_0_/_70%)]"
+                        x-data="{ guestName: '' }">
+                        <!-- Invitation text -->
+                        <div class="text-center">
+                            <span class="font-invite" :class="{ 'text-2xl': $store.lang.current !== 'km' }"
+                                x-text="$store.lang.text.invitation">សូមគោរពអញ្ជើញ</span>
+                        </div>
+
+                        <!-- Frame container -->
+                        <div class="relative flex flex-col items-center mt-2">
+                            <div class="relative inline-block">
+                                <img x-ref="frame" src="https://theapka.com/storage/templates/chhay/images/frame_1.png"
+                                    class="h-[50px]  w-[420px]" />
+
+                                <!-- Centered text container -->
+                                <div class="absolute inset-0 flex items-center justify-center px-4">
+                                    <div x-ref="nameText" class="font-semibold font-guest-name whitespace-nowrap"
+                                        x-text="guestName" :class="{ 'text-xl': $store.lang.current !== 'km' }">
+                                    </div>
+                                    <div id="guestNameDisplay" class="text-lg font-kantumruy">កញ្ញា គិម ធិញធិញ
+</div>
+
+<script>
+  // Get "name" from URL query
+  const params = new URLSearchParams(window.location.search);
+  const name = params.get('name');
+  if(name) {
+    const el = document.querySelector('.-mt-[40px].font-kantumruy');
+    if(el) el.textContent = name;
+  }
+</script>
+
+                   
+    <script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;6b187b7e88044e329324dc2dc359cf69&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+<script>
+  // Get query string value (?name=...)
+  const urlParams = new URLSearchParams(window.location.search);
+  const guestName = urlParams.get("name");
+
+  // If name exists, update the display div
+  if (guestName) {
+    const display = document.getElementById("guestNameDisplay");
+    if (display) {
+      display.textContent = decodeURIComponent(guestName);
+    }
+  }
+</script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex-1"></div>
+                    <div
+                        class="pb-3 text-base text-center font-dangrek bg-gradient-to-t from-gray-900 to-transparent [text-shadow:_0_1px_0_rgb(0_0_0_/_70%)]">
+                        <div class="pb-1">
+
+                            <div>
+                                <span id="event-date" class="text-2xl">ថ្ងៃអាទិត្យ ទី ២៨ ខែ កុម្ភះ ឆ្នាំ ២០២៦ ម៉ោង ៥:៣០ ល្ងាច</span>
+                            </div>
+
+                        </div>
+                        <div class="leading-8">
+                            សៀមរាប</div>
+                        <span></span>
+                        <div class="flex justify-center">
+                            <add-to-calendar-button size="1"
+                                name="លី មិនហូ &amp; គិម ធិញធិញ's Wedding"
+                                startdate="2026-01-12"
+                                starttime="13:10"
+                                enddate="2026-01-12"
+                                endtime="21:00" timezone="Asia/Phnom_Penh"
+                                location="GWV3+CW ភ្នំពេញ"
+                                options="'Apple','Google','iCal','Outlook.com'" atcb-button-id="atcb-btn-1"
+                                organizer="TheapKa.com|admin@theapka.com"
+                                description="សៀមរាប. Powered by https://theapka.com" class="atcb-light"
+                                style="visibility: visible; opacity: 1; position: relative;"
+                                atcb-last-event="closeList:Background Hit"></add-to-calendar-button>
+                        </div>
+                    </div>
+
+                    <div class="absolute bottom-3 left-5">
+                        <div class="w-full h-[50px]">
+                            <div class="down-arrow"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fancybox -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+
+  <!-- Khmer Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Moulpali&display=swap" rel="stylesheet">
+
+  <style>
+    .font-moulpali {
+      font-family: "Moulpali", cursive;
+    }
+  </style>
+            <!-- Second Page -->
+           <div class="w-full max-w-7xl mx-auto px-6 sm:px-8 md:px-12 py-12">
+<div class="w-full py-12 text-center bg-transparent">
+
+  <div class="max-w-4xl mx-auto px-4">
+
+    <!-- Title -->
+    <h2 class="text-base sm:text-lg md:text-xl
+               font-[Moul]
+               text-yellow-600
+               tracking-wide
+               mb-4">
+      យើងខ្ញុំមានកិត្តិយសសូមគោរពអញ្ជើញ
+    </h2>
+
+    <!-- Decoration -->
+    <div class="flex justify-center mb-6">
+      <img
+        src="https://i.postimg.cc/tJ1DRqKq/decor-line.png"
+        alt="decor"
+        class="w-28 sm:w-32 opacity-90"
+      />
+    </div>
+
+    <!-- Paragraph -->
+    <p class="text-center
+              font-[Moulpali]
+              text-[#7aa6d9]
+              text-sm sm:text-base md:text-lg
+              leading-loose
+              px-4">
+      ឯកឧត្តម លោកឧកញ៉ា លោកជំទាវ លោក លោកស្រី អ្នកនាងកញ្ញា
+      អញ្ជើញចូលរួមជាអធិបតី និងជាភ្ញៀវកិត្តិយស
+      ដើម្បីប្រសិទ្ធិពរជ័យសិរីសួស្តី ជ័យមង្គល
+      ក្នុងពិធីអាពាហ៍ពិពាហ៍ របស់យើងខ្ញុំទាំងពីរ។
+    </p>
+
+  </div>
+</div>
+  <!-- 🌸 TITLE (ABOVE GRID) -->
+  <h2 class="text-lg sm:text-xl md:text-2xl text-center font-moulpali mb-8
+             bg-gradient-to-r from-yellow-500 via-yellow-600 to-amber-300
+             bg-clip-text text-transparent">
+    កំរងរូបភាពអាពាហ៍ពិពាហ៍របស់យើង
+  </h2>
+
+  <!-- 📸 IMAGE GRID -->
+  <div class="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-5">
+
+    <!-- Card 1 -->
+    <a class="group relative aspect-[3/4] overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-all duration-300"
+       data-fancybox="gallery"
+       href="https://i.postimg.cc/BnZQ8L6x/IMG-2405.jpg">
+
+      <img class="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+           src="https://i.postimg.cc/BnZQ8L6x/IMG-2405.jpg">
+
+      <div class="absolute inset-0 bg-black/0 group-hover:bg-black/25
+                  transition-all duration-300
+                  flex items-center justify-center
+                  opacity-0 group-hover:opacity-100">
+        <div class="bg-white/20 backdrop-blur-md p-4 rounded-full">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white"
+               fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            <line x1="11" y1="8" x2="11" y2="14"/>
+            <line x1="8" y1="11" x2="14" y2="11"/>
+          </svg>
+        </div>
+      </div>
+    </a>
+
+    <!-- Card 2 -->
+    <a class="group relative aspect-[3/4] overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-all duration-300"
+       data-fancybox="gallery"
+       href="https://i.postimg.cc/kX6v0G9b/IMG-2406.jpg">
+      <img class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+           src="https://i.postimg.cc/kX6v0G9b/IMG-2406.jpg">
+      <div class="absolute inset-0 bg-black/0 group-hover:bg-black/25 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+        <div class="bg-white/20 backdrop-blur-md p-4 rounded-full">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white"
+               fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            <line x1="11" y1="8" x2="11" y2="14"/>
+            <line x1="8" y1="11" x2="14" y2="11"/>
+          </svg>
+        </div>
+      </div>
+    </a>
+
+    <!-- Card 3 -->
+    <a class="group relative aspect-[3/4] overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-all duration-300"
+       data-fancybox="gallery"
+       href="https://i.postimg.cc/2SnF5t1j/IMG-2407.jpg">
+      <img class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+           src="https://i.postimg.cc/2SnF5t1j/IMG-2407.jpg">
+      <div class="absolute inset-0 bg-black/0 group-hover:bg-black/25 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+        <div class="bg-white/20 backdrop-blur-md p-4 rounded-full">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white"
+               fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            <line x1="11" y1="8" x2="11" y2="14"/>
+            <line x1="8" y1="11" x2="14" y2="11"/>
+          </svg>
+        </div>
+      </div>
+    </a>
+    
+     <!-- Card 4 -->
+    <a class="group relative aspect-[3/4] overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-all duration-300"
+       data-fancybox="gallery"
+       href="https://i.postimg.cc/qqZd888B/first.jpg">
+      <img class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+           src="https://i.postimg.cc/qqZd888B/first.jpg">
+      <div class="absolute inset-0 bg-black/0 group-hover:bg-black/25 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+        <div class="bg-white/20 backdrop-blur-md p-4 rounded-full">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white"
+               fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            <line x1="11" y1="8" x2="11" y2="14"/>
+            <line x1="8" y1="11" x2="14" y2="11"/>
+          </svg>
+        </div>
+      </div>
+    </a>
+
+    <!-- Add remaining images same pattern -->
+
+  </div>
+</div>
+
+            <div class="w-full my-12 text-center" x-data>
+                <div class="my-4 font-invite" :class="{ 'text-2xl': $store.lang.current !== 'km' }"
+                    x-text="$store.lang.text.location">ទីតាំងកម្មវិធីមង្គល</div>
+                 <div class="mapouter" style="position:relative; text-align:center; width:400px; height:400px;">
+  <div class="gmap_canvas" style="overflow:hidden; background:none!important; width:400px; height:400px;">
+    <iframe width="400px" height="400px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?q=9V8H%2B2V%2C%20Krong%20Siem%20Reap&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
+  </div>
+  <a href="https://norsumediagroup.com/embed-google-map-website-free" target="_blank" rel="noopener noreferrer" class="gme-generated-link">Embed Map on Website for Free</a>
+  <style>
+   .mapouter{position:relative;text-align:right;} .gmap_canvas{overflow:hidden;background:none!important;} .gmap_canvas iframe{width:100%;height:100%;} .mapouter a{display:block;font-size:0.85em;text-align:center;padding:5px 0;color:#6c757d;text-decoration:none;} .gme-generated-link{display:none!important;}
+  </style>
+</div>
+            </div>
+
+            
+                        
+
+            <div id="theapka-thank-you" class="w-full text-center h-[750px] bg-center bg-cover bg-no-repeat relative"
+                style="background-image: url('https://i.postimg.cc/2SnF5t1j/IMG-2407.jpg');">
+                <div class="z-0 w-full h-full bg-white opacity-30"></div>
+                <div
+                    class="absolute w-full px-3 mx-auto text-center text-white transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 z-1">
+                    <div class="max-w-xl p-2 mx-auto mt-24 text-xl leading-8 font-dangrek rounded-2xl"
+                        style="background: #cfbdb470">
+                        <img src="https://theapka.com/storage/templates/chhay/images/thank.gif" class="h-24 mx-auto"
+                            alt="" />
+                        <div class="justify-between mt-4">
+                            វត្តមានឯកឧត្តម លោកឧកញ៉ា លោកជំទាវ លោក លោកស្រី អ្នកនាងកញ្ញា
+                            ជាកិត្តិយសដ៏ឧត្តុង្គឧត្តម ចំពោះគ្រួសាររបស់យើងខ្ញុំ។
+                        </div>
+                        <div class="flex justify-center mx-auto">
+                            <img src="https://theapka.com/storage/templates/chhay/images/flower_2.gif" class="h-12"
+                                alt="" /><img src="https://theapka.com/storage/templates/chhay/images/flower_2.gif"
+                                class="h-12" alt="" /><img
+                                src="https://theapka.com/storage/templates/chhay/images/flower_2.gif" class="h-12"
+                                alt="" /><img src="https://theapka.com/storage/templates/chhay/images/flower_2.gif"
+                                class="h-12" alt="" /><img
+                                src="https://theapka.com/storage/templates/chhay/images/flower_2.gif" class="h-12"
+                                alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"6b187b7e88044e329324dc2dc359cf69","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+
+</html>
