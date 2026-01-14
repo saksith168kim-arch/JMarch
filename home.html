@@ -175,16 +175,18 @@
         }
     </script>
 </head>
- <style>
+<style>
   body {
-    min-height: 100vh; /* full viewport height */
+    margin: 0; /* remove default body margin */
+    min-height: 100vh; /* ensure it covers full screen */
     background-image: url('https://i.postimg.cc/CMcKS2RQ/background.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed; /* optional: stays fixed on scroll */
+    background-attachment: fixed; /* so it doesn’t scroll */
   }
 </style>
+
 <body>
     
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
