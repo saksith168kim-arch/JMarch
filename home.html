@@ -561,7 +561,14 @@
       <!-- Ornament -->
       <div class="mt-3 flex items-center justify-center">
         <span class="h-px w-16 bg-amber-300/70"></span>
-        <span class="mx-3 text-amber-400">❦</span>
+        <div class="flex justify-center mx-3">
+  <img
+    src="https://i.postimg.cc/tJ1DRqKq/decor-line.png"
+    alt="decor"
+    class="w-20 sm:w-24 opacity-90"
+  />
+</div>
+
         <span class="h-px w-16 bg-amber-300/70"></span>
       </div>
     </div>
@@ -701,11 +708,133 @@
     </div>
 
     <!-- Optional: small note -->
-    <p class="text-center text-xs text-gray-400 mt-6">
+    <p class="text-center text-xs text-gray-400 mt-2">
       *សូមស្កេន QR ដើម្បីបើកទីតាំងក្នុង Google Maps
     </p>
   </div>
 </section>
+
+<!-- ABA QR SECTION (ADD ONLY – compact spacing, always 2 columns) -->
+<!-- ABA QR SECTION -->
+<!-- ABA QR SECTION (QR + anime only) -->
+<section class="w-full bg-[#f7f6f3] py-8 px-4 sm:px-6 md:px-10">
+  <div class="mx-auto max-w-md">
+
+    <!-- Header -->
+    <div class="text-center mb-4">
+      <h2 class="font-moulpali text-lg sm:text-xl tracking-wide text-amber-600">
+        ចងដៃតាម ABA
+      </h2>
+
+      <div class="mt-2 flex items-center justify-center">
+        <span class="h-px w-12 bg-amber-300/70"></span>
+        <div class="mx-3">
+          <img src="https://i.postimg.cc/tJ1DRqKq/decor-line.png" alt="decor" class="w-20 sm:w-24 opacity-90">
+        </div>
+        <span class="h-px w-12 bg-amber-300/70"></span>
+      </div>
+    </div>
+
+    <!-- Switch -->
+    <div class="flex justify-center mb-5">
+      <div class="inline-flex rounded-full bg-amber-100/60 p-1 border border-amber-200/60 shadow-sm">
+        <button id="btnUsd" type="button"
+          class="px-6 py-2 rounded-full text-sm font-semibold transition bg-amber-600 text-white shadow">
+          USD
+        </button>
+        <button id="btnKhr" type="button"
+          class="px-6 py-2 rounded-full text-sm font-semibold transition text-amber-700 hover:bg-white/60">
+          ៛
+        </button>
+      </div>
+    </div>
+
+    <!-- Card -->
+    <div class="rounded-3xl bg-white/90 border border-black/5 shadow-2xl p-6">
+      <p class="text-center text-sm font-semibold text-gray-700">Scan. Pay. Done.</p>
+
+      <div class="mt-4 flex justify-center">
+        <div class="bg-white p-5 rounded-2xl shadow-md ring-1 ring-black/10">
+
+          <!-- USD QR -->
+          <img id="qrUsd"
+            src="https://i.postimg.cc/15Ldt1h2/photo-2026-02-02-14-08-42-removebg-preview.png"
+            alt="ABA QR USD"
+            class="w-60 h-60 sm:w-64 sm:h-64 object-contain"
+          />
+
+          <!-- KHR QR -->
+          <img id="qrKhr"
+            src="https://i.postimg.cc/sDGqPg3S/photo-2026-02-02-14-08-37-removebg-preview.png"
+            alt="ABA QR Riel"
+            class="w-60 h-60 sm:w-64 sm:h-64 object-contain hidden"
+          />
+        </div>
+      </div>
+
+      <p class="mt-4 text-center text-sm text-gray-700 font-nokora">
+        <span id="curLabel" class="font-semibold">USD</span>
+      </p>
+
+      <p id="accInfo" class="mt-3 text-center text-sm text-gray-700 font-nokora leading-relaxed">
+  <span class="font-semibold">Name:</span> NGONG SREY MACH<br>
+  <span class="font-semibold">Account number:</span> 001 757 530
+</p>
+
+
+      
+    </div>
+  </div>
+</section>
+<script src="https://cdn.tailwindcss.com"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+<script>
+  const btnUsd = document.getElementById("btnUsd");
+  const btnKhr = document.getElementById("btnKhr");
+
+  const qrUsd  = document.getElementById("qrUsd");
+  const qrKhr  = document.getElementById("qrKhr");
+
+  const label  = document.getElementById("curLabel");
+  const accInfo = document.getElementById("accInfo");
+
+  function setCurrency(cur) {
+    const isUsd = cur === "usd";
+
+    // Toggle QR images
+    qrUsd.classList.toggle("hidden", !isUsd);
+    qrKhr.classList.toggle("hidden", isUsd);
+
+    // Currency label
+    label.textContent = isUsd ? "USD" : "៛";
+
+    // Account info
+    accInfo.innerHTML = isUsd
+      ? `<span class="font-semibold">Name:</span> NGONG SREY MACH<br>
+         <span class="font-semibold">Account number:</span> 001 757 530`
+      : `<span class="font-semibold">Name:</span> MAM MAKRA<br>
+         <span class="font-semibold">Account number:</span> 002 268 531`;
+
+    // Button styles
+    btnUsd.classList.toggle("bg-amber-600", isUsd);
+    btnUsd.classList.toggle("text-white", isUsd);
+    btnUsd.classList.toggle("shadow", isUsd);
+    btnUsd.classList.toggle("text-amber-700", !isUsd);
+
+    btnKhr.classList.toggle("bg-amber-600", !isUsd);
+    btnKhr.classList.toggle("text-white", !isUsd);
+    btnKhr.classList.toggle("shadow", !isUsd);
+    btnKhr.classList.toggle("text-amber-700", isUsd);
+  }
+
+  btnUsd.addEventListener("click", () => setCurrency("usd"));
+  btnKhr.addEventListener("click", () => setCurrency("khr"));
+</script>
+
+
+
+
 
 
             <div id="theapka-thank-you"
@@ -724,8 +853,7 @@
                  class="h-24 mx-auto" alt="" />
 
             <div class="justify-between mt-4">
-                វត្តមានឯកឧត្តម លោកឧកញ៉ា លោកជំទាវ លោក លោកស្រី អ្នកនាងកញ្ញា
-                ជាកិត្តិយសដ៏ឧត្តុង្គឧត្តម ចំពោះគ្រួសាររបស់យើងខ្ញុំ។
+               យើងខ្ញុំទាំងពីរ សូមថ្លែងអំណរគុណ យ៉ាងជ្រាលជ្រៅ ចំពោះវត្តមាន ដ៏ឧត្តុង្គឧត្តមរបស់ សម្តេច ឯកឧត្តម លោកជំទាវ លោកអ្នកឧកញ៉ា អ្នកឧកញ៉ា ឧកញ៉ា លោក លោកស្រី អ្នកនាង កញ្ញា ដែលបាន អញ្ជើញចូលរួមជាកិត្តិយស ក្នុងពិធីសិរីសួស្តីអាពាហ៍ពិពាហ៍ របស់យើងខ្ញុំ នាពេលខាងមុខនេះ។ យើងខ្ញុំសូមការខន្តីអភ័យទោស ដែលពុំបានជូនលិខិតអញ្ជើញ ដោយផ្ទាល់ ។ ដោយការវកិច្ចដ៏ខ្ពង់ខ្ពស់ពីយើងខ្ញុំ។
             </div>
 
             <div class="flex justify-center mx-auto">
