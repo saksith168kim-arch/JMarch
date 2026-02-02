@@ -331,7 +331,7 @@
                         <div class="pb-1">
 
                             <div>
-                                <span id="event-date" class="text-2xl">ថ្ងៃសៅរ៍ ទី២៨ ខែកុម្ភះ ឆ្នាំ២០២៦ នៅភោជនីយដ្ខាន សមភាពថ្មី (អាគារ A)</span>
+                                <span id="event-date" class="text-2xl">ថ្ងៃសៅរ៍ ទី២៨ ខែកុម្ភះ ឆ្នាំ២០២៦ នៅភោជនីយដ្ឋាន សមភាពថ្មី (អាគារ A)</span>
                             </div>
 
                         </div>
@@ -620,7 +620,7 @@
     កាលបរិច្ឆេទ
   </p>
   <p class="text-base sm:text-lg leading-relaxed">
-    ថ្ងៃសៅរ៍ ទី២៨ ខែកុម្ភះ ឆ្នាំ២០២៦ នៅភោជនីយដ្ខាន សមភាពថ្មី (អាគារ A) <br>
+    ថ្ងៃសៅរ៍ ទី២៨ ខែកុម្ភះ ឆ្នាំ២០២៦ នៅភោជនីយដ្ឋាន សមភាពថ្មី (អាគារ A) <br>
     <span class="text-amber-100 font-semibold">ម៉ោង ០៥ : ០០ នាទី ល្ងាច</span>
   </p>
 </div>
@@ -655,7 +655,7 @@
   <!-- QR with quiet zone -->
   <div class="bg-white/95 p-2 rounded-xl shadow-xl">
     <img
-      src="https://i.postimg.cc/vm4wGbVQ/qrcode-304919708-3f50f34d6f11bc405d66216bb555bc2f-2-removebg-preview.png"
+      src="https://i.postimg.cc/Kz3d8GpG/Map.png"
       alt="QR Code"
       class="w-24 h-24 sm:w-28 sm:h-28"
     />
@@ -717,26 +717,30 @@
 <!-- ABA QR SECTION (ADD ONLY – compact spacing, always 2 columns) -->
 <!-- ABA QR SECTION -->
 <!-- ABA QR SECTION (QR + anime only) -->
-<section class="w-full bg-[#f7f6f3] py-8 px-4 sm:px-6 md:px-10">
+<section class="w-full bg-[#f7f6f3] pt-2 pb-6 px-4 sm:px-6 md:px-10">
   <div class="mx-auto max-w-md">
 
     <!-- Header -->
-    <div class="text-center mb-4">
+    <div class="text-center mb-3">
       <h2 class="font-moulpali text-lg sm:text-xl tracking-wide text-amber-600">
         ចងដៃតាម ABA
       </h2>
 
-      <div class="mt-2 flex items-center justify-center">
+      <div class="mt-1 flex items-center justify-center">
         <span class="h-px w-12 bg-amber-300/70"></span>
         <div class="mx-3">
-          <img src="https://i.postimg.cc/tJ1DRqKq/decor-line.png" alt="decor" class="w-20 sm:w-24 opacity-90">
+          <img
+            src="https://i.postimg.cc/tJ1DRqKq/decor-line.png"
+            alt="decor"
+            class="w-20 sm:w-24 opacity-90"
+          />
         </div>
         <span class="h-px w-12 bg-amber-300/70"></span>
       </div>
     </div>
 
-    <!-- Switch -->
-    <div class="flex justify-center mb-5">
+    <!-- Currency Switch -->
+    <div class="flex justify-center mb-4">
       <div class="inline-flex rounded-full bg-amber-100/60 p-1 border border-amber-200/60 shadow-sm">
         <button id="btnUsd" type="button"
           class="px-6 py-2 rounded-full text-sm font-semibold transition bg-amber-600 text-white shadow">
@@ -751,72 +755,92 @@
 
     <!-- Card -->
     <div class="rounded-3xl bg-white/90 border border-black/5 shadow-2xl p-6">
-      <p class="text-center text-sm font-semibold text-gray-700">Scan. Pay. Done.</p>
+      <p class="text-center text-sm font-semibold text-gray-700">
+        Scan. Pay. Done.
+      </p>
 
+      <!-- QR FRAME -->
       <div class="mt-4 flex justify-center">
-        <div class="bg-white p-5 rounded-2xl shadow-md ring-1 ring-black/10">
+        <div class="relative w-[300px] h-[300px]">
 
-          <!-- USD QR -->
-          <img id="qrUsd"
-            src="https://i.postimg.cc/15Ldt1h2/photo-2026-02-02-14-08-42-removebg-preview.png"
-            alt="ABA QR USD"
-            class="w-60 h-60 sm:w-64 sm:h-64 object-contain"
+          <!-- Gold border -->
+          <div class="absolute inset-0 rounded-[32px] border-[5px] border-amber-400"></div>
+
+          <!-- Flower decorations (decor only) -->
+          <img
+            src="https://i.postimg.cc/1zsGzJW0/logo.png"
+            alt=""
+            class="absolute -top-6 -right-6 w-16 h-16 pointer-events-none select-none"
+          />
+          <img
+            src="https://i.postimg.cc/1zsGzJW0/logo.png"
+            alt=""
+            class="absolute -bottom-6 -left-6 w-16 h-16 pointer-events-none select-none"
           />
 
-          <!-- KHR QR -->
-          <img id="qrKhr"
-            src="https://i.postimg.cc/sDGqPg3S/photo-2026-02-02-14-08-37-removebg-preview.png"
-            alt="ABA QR Riel"
-            class="w-60 h-60 sm:w-64 sm:h-64 object-contain hidden"
-          />
+          <!-- Inner white quiet zone -->
+          <div class="absolute inset-7 rounded-[24px] bg-white shadow-xl flex items-center justify-center">
+
+            <!-- USD QR -->
+            <img
+              id="qrUsd"
+              src="https://i.postimg.cc/15Ldt1h2/photo-2026-02-02-14-08-42-removebg-preview.png"
+              alt="ABA QR USD"
+              class="w-[230px] h-[230px] object-contain"
+            />
+
+            <!-- Riel QR -->
+            <img
+              id="qrKhr"
+              src="https://i.postimg.cc/sDGqPg3S/photo-2026-02-02-14-08-37-removebg-preview.png"
+              alt="ABA QR Riel"
+              class="w-[230px] h-[230px] object-contain hidden"
+            />
+          </div>
         </div>
       </div>
 
+      <!-- Currency label -->
       <p class="mt-4 text-center text-sm text-gray-700 font-nokora">
         <span id="curLabel" class="font-semibold">USD</span>
       </p>
 
+      <!-- Account info -->
       <p id="accInfo" class="mt-3 text-center text-sm text-gray-700 font-nokora leading-relaxed">
-  <span class="font-semibold">Name:</span> NGONG SREY MACH<br>
-  <span class="font-semibold">Account number:</span> 001 757 530
-</p>
+        <span class="font-semibold">Name:</span> NGONG SREY MACH<br>
+        <span class="font-semibold">Account number:</span> 001 757 530
+      </p>
 
-
-      
     </div>
   </div>
 </section>
-<script src="https://cdn.tailwindcss.com"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- JS logic -->
 <script>
   const btnUsd = document.getElementById("btnUsd");
   const btnKhr = document.getElementById("btnKhr");
-
   const qrUsd  = document.getElementById("qrUsd");
   const qrKhr  = document.getElementById("qrKhr");
-
   const label  = document.getElementById("curLabel");
   const accInfo = document.getElementById("accInfo");
 
   function setCurrency(cur) {
     const isUsd = cur === "usd";
 
-    // Toggle QR images
     qrUsd.classList.toggle("hidden", !isUsd);
     qrKhr.classList.toggle("hidden", isUsd);
 
-    // Currency label
     label.textContent = isUsd ? "USD" : "៛";
 
-    // Account info
     accInfo.innerHTML = isUsd
       ? `<span class="font-semibold">Name:</span> NGONG SREY MACH<br>
          <span class="font-semibold">Account number:</span> 001 757 530`
       : `<span class="font-semibold">Name:</span> MAM MAKRA<br>
          <span class="font-semibold">Account number:</span> 002 268 531`;
 
-    // Button styles
     btnUsd.classList.toggle("bg-amber-600", isUsd);
     btnUsd.classList.toggle("text-white", isUsd);
     btnUsd.classList.toggle("shadow", isUsd);
@@ -831,6 +855,7 @@
   btnUsd.addEventListener("click", () => setCurrency("usd"));
   btnKhr.addEventListener("click", () => setCurrency("khr"));
 </script>
+
 
 
 
