@@ -650,7 +650,22 @@
             </div>
 
             <!-- CENTER QR -->
-           <div class="absolute bottom-24 left-[28%] -translate-x-1/2 flex flex-col items-center">
+           <!-- Soft pop animation -->
+<style>
+@keyframes soft-pop {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+.animate-soft-pop {
+  animation: soft-pop 1.8s ease-in-out infinite;
+}
+</style>
+
+<div class="absolute bottom-24 left-[28%] -translate-x-1/2 flex flex-col items-center">
 
   <!-- QR with quiet zone -->
   <div class="bg-white/95 p-2 rounded-xl shadow-xl">
@@ -661,7 +676,7 @@
     />
   </div>
 
-  <!-- Button (smaller) -->
+  <!-- Button with pop animation -->
   <a
     href="https://maps.app.goo.gl/qpDAKZmWGE9dy8Gf7?g_st=ic"
     target="_blank" rel="noopener"
@@ -669,10 +684,17 @@
            text-white text-sm font-nokora font-semibold
            shadow-xl border border-amber-200/40
            bg-[linear-gradient(215deg,#D7BB83_0%,#A38C5E_100%)]
-           hover:brightness-110 active:brightness-95 transition"
+           hover:brightness-110 active:brightness-95 transition
+           animate-soft-pop"
   >
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none"
-         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <svg xmlns="http://www.w3.org/2000/svg"
+         class="w-4 h-4"
+         viewBox="0 0 24 24"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="2"
+         stroke-linecap="round"
+         stroke-linejoin="round">
       <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/>
       <circle cx="12" cy="10" r="3"/>
     </svg>
@@ -680,6 +702,7 @@
   </a>
 
 </div>
+
 
 
             <!-- RIGHT (optional space) -->
@@ -878,7 +901,7 @@
                  class="h-24 mx-auto" alt="" />
 
             <div class="justify-between mt-4">
-               យើងខ្ញុំទាំងពីរ សូមថ្លែងអំណរគុណ យ៉ាងជ្រាលជ្រៅ ចំពោះវត្តមាន ដ៏ឧត្តុង្គឧត្តមរបស់ សម្តេច ឯកឧត្តម លោកជំទាវ លោកអ្នកឧកញ៉ា អ្នកឧកញ៉ា ឧកញ៉ា លោក លោកស្រី អ្នកនាង កញ្ញា ដែលបាន អញ្ជើញចូលរួមជាកិត្តិយស ក្នុងពិធីសិរីសួស្តីអាពាហ៍ពិពាហ៍ របស់យើងខ្ញុំ នាពេលខាងមុខនេះ។ យើងខ្ញុំសូមការខន្តីអភ័យទោស ដែលពុំបានជូនលិខិតអញ្ជើញ ដោយផ្ទាល់ ។ ដោយការវកិច្ចដ៏ខ្ពង់ខ្ពស់ពីយើងខ្ញុំ។
+               យើងខ្ញុំទាំងពីរ សូមថ្លែងអំណរគុណ យ៉ាងជ្រាលជ្រៅ ចំពោះវត្តមាន ដ៏ឧត្តុង្គឧត្តមរបស់ ឯកឧត្តម លោកជំទាវ លោកអ្នកឧកញ៉ា អ្នកឧកញ៉ា ឧកញ៉ា លោក លោកស្រី អ្នកនាង កញ្ញា ដែលបាន អញ្ជើញចូលរួមជាកិត្តិយស ក្នុងពិធីសិរីសួស្តីអាពាហ៍ពិពាហ៍ របស់យើងខ្ញុំ នាពេលខាងមុខនេះ។ យើងខ្ញុំសូមការខន្តីអភ័យទោស ដែលពុំបានជូនលិខិតអញ្ជើញ ដោយផ្ទាល់ ។ ដោយការវកិច្ចដ៏ខ្ពង់ខ្ពស់ពីយើងខ្ញុំ។
             </div>
 
             <div class="flex justify-center mx-auto">
